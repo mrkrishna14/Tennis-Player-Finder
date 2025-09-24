@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<body>
+    <h3>Here are some people that match your age and skill level:</h3>
+ <style>  
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      .container { 
+  height: 200px;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style> 
+<table border = 1>
+    <thead>
+       <th>Name</th>
+       <th>Age</th>
+       <th>Skill level</th>
+       </thead>
+    
+    {% for row in rows %}
+       <tr>
+          <td>{{row['name']}}</td>
+          <td>{{row['age']}}</td>
+          <td>{{row['skill']}}</td>
+       </tr>
+    {% endfor %}
+ </table>
+ <div class="container">
+    <div class="center">
+      <button onclick="myFunction()">Redirect to Home Page</button>
+
+
+ <script>
+ function myFunction() {
+   location.replace("http://127.0.0.1:5000/dashboard")
+ }
+ 
+ </script>
+</body>
+</html>

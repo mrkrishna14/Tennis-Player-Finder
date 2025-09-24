@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<style>
+    .skill {
+      background-color: lightgreen;
+      size: 40px;
+    }
+    #name {
+      background-color: lightgreen;
+    }
+    .type {
+      background-color: darkred;
+      size: 38px;
+      color: white; 
+    }
+
+    </style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/dashcss.css">
+    <title>Dashboard</title>
+
+</head>
+<body>
+    <h1>Hello You are logged in</h1>
+    <p>Welcome to the tennis finder application. Here you can find friends to play tennis with that are at the same age level and skill level.</p>
+    
+    <form action="/match" method="post">
+        <label for="name">Please input your name: </label>
+        <input type="text" id="name" name="name"/>
+        <label for="age">Select your age:</label>
+        <input type="text" id="age" name="age" min="8" max="60" />
+        <label for="skill">What do you think your skill level is on a scale from 1-5:</label>
+        <select name="skill" class="skill" style="width: 150px; height: 40px;">
+          <option disabled selected value="skill"
+            >Skill level</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <label for="type">Would like your match to be based on just age or just skill or both: </label>
+        <select name="type" class="type" style="width: 150px; height: 40px;">
+          <option value="onlyage">Only age</option>
+          <option value="onlyskill">Only skill</option>
+          <option value="both">Both</option>
+        </select>
+        <input type="submit" value="Search" style="background-color: lightskyblue; height: 50px; border-color: black;
+         width: 100px; margin-left: 25px; border-width: thick;"/>
+    
+    
+    </form>
+
+  
+    <a href="{{url_for('logout')}}">Press here to logout</a>
+</body>
+</html>
